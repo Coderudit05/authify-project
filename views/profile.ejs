@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 text-white min-h-screen flex items-center justify-center">
+  <% if (user) { %>
+    <div class="text-center p-8 bg-zinc-800 rounded-lg shadow-lg">
+      <h1 class="text-3xl font-bold mb-4">Welcome, <%= user.username || user.name %> 🎉</h1>
+      <p class="text-lg mb-4">Email: <%= user.email %></p>
+      <a href="/logout" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Logout</a>
+    </div>
+  <% } else { %>
+    <div class="text-center p-8 bg-zinc-800 rounded-lg shadow-lg">
+      <h1 class="text-3xl font-bold mb-4">Welcome</h1>
+      <p class="text-lg mb-4">No user found. <a href="/login" class="text-blue-400 hover:underline">Log in</a></p>
+    </div>
+  <% } %>
+</body>
+</html>
